@@ -32,40 +32,23 @@
     "keybindings": [
       {
         "command": "shadow-comments.addComment",
-        "key": "ctrl+alt+c",
-        "win": "ctrl+alt+c",
-        "linux": "ctrl+alt+c",
-        "mac": "cmd+alt+c",
+        "key": "shift+alt+c",
+        "mac": "shift+cmd+c",
         "when": "editorTextFocus"
       },
       {
         "command": "shadow-comments.removeComment",
-        "key": "ctrl+alt+r",
-        "win": "ctrl+alt+r",
-        "linux": "ctrl+alt+r",
-        "mac": "cmd+alt+r",
+        "key": "shift+alt+d",
+        "mac": "shift+cmd+d",
         "when": "editorTextFocus"
       },
       {
         "command": "shadow-comments.toggleVisibility",
-        "key": "ctrl+alt+v",
-        "win": "ctrl+alt+v",
-        "linux": "ctrl+alt+v",
-        "mac": "cmd+alt+v",
+        "key": "shift+alt+v",
+        "mac": "shift+cmd+v",
         "when": "editorTextFocus"
       }
     ],
-    "configuration": {
-      "title": "Shadow Comments",
-      "properties": {
-        "shadowComments.color": {
-          "type": "string",
-          "default": "#7f8487",
-          "description": "Hex color code for the shadow comments."
-        }
-      }
-    }
-  },
   "scripts": {
     "vscode:prepublish": "npm run package",
     "compile": "npm run check-types && npm run lint && node esbuild.js",
@@ -92,4 +75,5 @@
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1"
   }
+}
 }
