@@ -14,11 +14,10 @@ Shadow Comments allows you to annotate code with "sticky notes" that only *you* 
 
 ## Usage
 1. Click on any line of code.
-2. Press `Ctrl + Alt + C` (Mac: `Cmd + Alt + C`).
-3. Type your note.
-4. Press Enter.
+2. Press `Shift + Alt + C` (Mac: `Shift + Cmd + C`).
+3. Type your note and hit Enter.
 
-## Commands
-- `Shadow Comments: Add Shadow Comment`
-- `Shadow Comments: Remove Shadow Comment`
-- `Shadow Comments: Toggle Visibility`
+## Key Shortcuts
+- **Add Comment:** `Shift + Alt + C`
+- **Delete Comment:** `Shift + Alt + D`
+- **Toggle Visibility:** `Shift + Alt + V`
