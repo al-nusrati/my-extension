@@ -1,0 +1,95 @@
+{
+  "name": "shadow-comments",
+  "displayName": "Shadow Comments",
+  "description": "Leave private, annotation-layer comments that don't mess up your source code.",
+  "version": "0.0.1",
+  "publisher": "alNusrati",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "shadow-comments.addComment",
+        "title": "Add Shadow Comment"
+      },
+      {
+        "command": "shadow-comments.removeComment",
+        "title": "Remove Shadow Comment"
+      },
+      {
+        "command": "shadow-comments.toggleVisibility",
+        "title": "Toggle Shadow Comments"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "shadow-comments.addComment",
+        "key": "ctrl+alt+c",
+        "win": "ctrl+alt+c",
+        "linux": "ctrl+alt+c",
+        "mac": "cmd+alt+c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "shadow-comments.removeComment",
+        "key": "ctrl+alt+r",
+        "win": "ctrl+alt+r",
+        "linux": "ctrl+alt+r",
+        "mac": "cmd+alt+r",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "shadow-comments.toggleVisibility",
+        "key": "ctrl+alt+v",
+        "win": "ctrl+alt+v",
+        "linux": "ctrl+alt+v",
+        "mac": "cmd+alt+v",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Shadow Comments",
+      "properties": {
+        "shadowComments.color": {
+          "type": "string",
+          "default": "#7f8487",
+          "description": "Hex color code for the shadow comments."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "typescript-eslint": "^8.18.1",
+    "eslint": "^9.17.0",
+    "esbuild": "^0.24.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.7.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
